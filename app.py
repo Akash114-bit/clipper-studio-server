@@ -10,7 +10,7 @@ from yt_dlp.utils import download_range_func
 
 FONT = os.getenv("FONT", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")
 MAX_CLIP = int(os.getenv("MAX_CLIP", "180"))  # seconds per clip
-WORK = Path("work"); WORK.mkdir(exist_ok=True)
+WORK = Path("work").resolve(); WORK.mkdir(exist_ok=True)
 app = FastAPI()
 SIZE = {"916": (1080, 1920), "11": (1080, 1080)}
 LOOK = {"none": "", "vivid": "eq=saturation=1.5:contrast=1.1", "warm": "colorbalance=rs=0.15:bs=-0.15",
